@@ -9,6 +9,7 @@ public class AimLine : MonoBehaviour
     public MouseControl mc;
     public Player p;
     public TimeController tc;
+    public PostProcessing pp;
 
     void Start()
     {
@@ -34,12 +35,14 @@ public class AimLine : MonoBehaviour
     {
         UpdatePoints();
         tc.SlowDown();
+        pp.AimEffects();
     }
 
     private void AimingClose()
     {
         lineRend.enabled = false;
         tc.ResetTime();
+        pp.BaseEffects();
     }
 
     private void UpdatePoints()
