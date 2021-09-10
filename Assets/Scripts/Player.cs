@@ -6,7 +6,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public MouseControl mc;
 
     void Start()
     {
@@ -16,15 +15,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            Strike(mc.GetForce());
-        }
+
     }
 
     //removes perevious forces on the ball right before the strike
     //so that the ball will travel exactly where the user wants it to
-    private void Strike(Vector2 force)
+    public void Strike(Vector2 force)
     {
         rb.velocity = new Vector2(0, 0);
         rb.AddForce(force);

@@ -16,6 +16,12 @@ public class PostProcessing : MonoBehaviour
     public float AimBloom = 14f;
     public float AimVignette = 0.44f;
 
+    public float transitionSpeed = 0.5f;
+    private string state = "base";
+
+    //used so bloom will rach its aim value ast the same time as vignette
+    private float bloomScale;
+
     void Start()
     {
         v.profile.TryGetSettings(out b);
@@ -23,22 +29,57 @@ public class PostProcessing : MonoBehaviour
         vg.active = true;
         b.active = true;
 
-        BaseEffects();
-
+        bloomScale = (AimBloom - BaseBloom) / (AimVignette - BaseVignette);
     }
 
-    public void BaseEffects()
+    void Update()
     {
-
-        b.intensity.value = BaseBloom;
-        vg.intensity.value = BaseVignette;
+        if (state == "AimingIn")
+        {
+            TransIn();
+        }
+        if (state == "AimingOut")
+        {
+            TransOut();
+        }
     }
 
-    public void AimEffects()
+    
+
+    private void TransIn()
     {
-        
-        b.intensity.value = AimBloom;
-        vg.intensity.value = AimVignette;
+        if(b.intensity.value<AimBloom)
+        {
+            b.intensity.value += bloomScale* 0.01f * transitionSpeed;
+        }
+        if(vg.intensity.value<AimVignette)
+        {
+            vg.intensity.value += 0.01f * transitionSpeed;
+
+        }
+    }
+
+    private void TransOut()
+    {
+        if (b.intensity.value > BaseBloom)
+        {
+            b.intensity.value -= bloomScale* 0.005f * transitionSpeed;
+        }
+        if (vg.intensity.value > BaseVignette)
+        {
+            vg.intensity.value -= 0.005f * transitionSpeed;
+        }
+    }
+
+
+    public void AimIn()
+    {
+        state = "AimingIn";
+    }
+
+    public void AimOut()
+    {
+        state = "AimingOut";
     }
 
 

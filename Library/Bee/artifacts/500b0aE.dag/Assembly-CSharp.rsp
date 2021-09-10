@@ -336,6 +336,7 @@
 "Assets/Boundary.cs"
 "Assets/BoundaryChilderen.cs"
 "Assets/Enemy.cs"
+"Assets/InputManager.cs"
 "Assets/PostProcessing.cs"
 "Assets/Scripts/MouseControl.cs"
 "Assets/Scripts/Player.cs"

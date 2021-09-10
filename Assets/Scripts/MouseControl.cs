@@ -8,18 +8,7 @@ public class MouseControl : MonoBehaviour
 
     private Vector2 mousePos;
     public Player p;
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    
     //gets the current distance between player and the mouse cursor
     private Vector2 GetPlayerDis()
     {
