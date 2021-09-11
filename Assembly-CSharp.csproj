@@ -53,15 +53,18 @@
     <UnityVersion>2021.1.9f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\TimeController.cs" />
-    <Compile Include="Assets\AimLine.cs" />
+    <Compile Include="Assets\Scripts\TimeController.cs" />
+    <Compile Include="Assets\Scripts\AimLine.cs" />
     <Compile Include="Assets\Scripts\MouseControl.cs" />
-    <Compile Include="Assets\PostProcessing.cs" />
-    <Compile Include="Assets\Enemy.cs" />
-    <Compile Include="Assets\Boundary.cs" />
-    <Compile Include="Assets\BoundaryChilderen.cs" />
+    <Compile Include="Assets\Scripts\PostProcessing.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Scripts\Boundary.cs" />
+    <Compile Include="Assets\Scripts\BoundaryChilderen.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\InputManager.cs" />
+    <Compile Include="Assets\ScoreText.cs" />
+    <Compile Include="Assets\EnemyManager.cs" />
+    <Compile Include="Assets\SceneManger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
