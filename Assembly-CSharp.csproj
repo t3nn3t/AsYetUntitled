@@ -59,12 +59,12 @@
     <Compile Include="Assets\Scripts\PostProcessing.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
+    <Compile Include="Assets\SceneManger.cs" />
+    <Compile Include="Assets\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Boundary.cs" />
     <Compile Include="Assets\Scripts\BoundaryChilderen.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\ScoreText.cs" />
-    <Compile Include="Assets\EnemyManager.cs" />
-    <Compile Include="Assets\SceneManger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
